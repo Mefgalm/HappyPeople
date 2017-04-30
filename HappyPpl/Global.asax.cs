@@ -22,7 +22,7 @@ namespace HappyPpl
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
             //SetUpCountryData();
-            AddIndexInfo();
+            //AddIndexInfo();
         }
 
         private void AddIndexInfo()
@@ -146,7 +146,7 @@ Many of the displaced have lost their jobs, and their financial resources are th
                 });
 
                 happyContext.SaveChanges();
-            }
+           }
         }
 
         private void SetUpCountryData()
