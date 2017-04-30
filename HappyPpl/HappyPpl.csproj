@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F7D2E548-8251-488D-AA49-56B44392E9AE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HappyPpl</RootNamespace>
+    <AssemblyName>HappyPpl</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/ad176c78-bfec-4568-93dd-bcfebc0428b6/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/HappyPpl</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\Diagram.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\ad.svg" />
+    <Content Include="Images\ae.svg" />
+    <Content Include="Images\af.svg" />
+    <Content Include="Images\ag.svg" />
+    <Content Include="Images\ai.svg" />
+    <Content Include="Images\al.svg" />
+    <Content Include="Images\am.svg" />
+    <Content Include="Images\ao.svg" />
+    <Content Include="Images\aq.svg" />
+    <Content Include="Images\ar.svg" />
+    <Content Include="Images\as.svg" />
+    <Content Include="Images\at.svg" />
+    <Content Include="Images\au.svg" />
+    <Content Include="Images\aw.svg" />
+    <Content Include="Images\ax.svg" />
+    <Content Include="Images\az.svg" />
+    <Content Include="Images\ba.svg" />
+    <Content Include="Images\bb.svg" />
+    <Content Include="Images\bd.svg" />
+    <Content Include="Images\be.svg" />
+    <Content Include="Images\bf.svg" />
+    <Content Include="Images\bg.svg" />
+    <Content Include="Images\bh.svg" />
+    <Content Include="Images\bi.svg" />
+    <Content Include="Images\bj.svg" />
+    <Content Include="Images\bl.svg" />
+    <Content Include="Images\bm.svg" />
+    <Content Include="Images\bn.svg" />
+    <Content Include="Images\bo.svg" />
+    <Content Include="Images\bq.svg" />
+    <Content Include="Images\br.svg" />
+    <Content Include="Images\bs.svg" />
+    <Content Include="Images\bt.svg" />
+    <Content Include="Images\bv.svg" />
+    <Content Include="Images\bw.svg" />
+    <Content Include="Images\by.svg" />
+    <Content Include="Images\bz.svg" />
+    <Content Include="Images\ca.svg" />
+    <Content Include="Images\cc.svg" />
+    <Content Include="Images\cd.svg" />
+    <Content Include="Images\cf.svg" />
+    <Content Include="Images\cg.svg" />
+    <Content Include="Images\ch.svg" />
+    <Content Include="Images\ci.svg" />
+    <Content Include="Images\ck.svg" />
+    <Content Include="Images\cl.svg" />
+    <Content Include="Images\cm.svg" />
+    <Content Include="Images\cn.svg" />
+    <Content Include="Images\co.svg" />
+    <Content Include="Images\cr.svg" />
+    <Content Include="Images\cu.svg" />
+    <Content Include="Images\cv.svg" />
+    <Content Include="Images\cw.svg" />
+    <Content Include="Images\cx.svg" />
+    <Content Include="Images\cy.svg" />
+    <Content Include="Images\cz.svg" />
+    <Content Include="Images\de.svg" />
+    <Content Include="Images\dj.svg" />
+    <Content Include="Images\dk.svg" />
+    <Content Include="Images\dm.svg" />
+    <Content Include="Images\do.svg" />
+    <Content Include="Images\dz.svg" />
+    <Content Include="Images\ec.svg" />
+    <Content Include="Images\ee.svg" />
+    <Content Include="Images\eg.svg" />
+    <Content Include="Images\eh.svg" />
+    <Content Include="Images\er.svg" />
+    <Content Include="Images\es.svg" />
+    <Content Include="Images\et.svg" />
+    <Content Include="Images\eu.svg" />
+    <Content Include="Images\fi.svg" />
+    <Content Include="Images\fj.svg" />
+    <Content Include="Images\fk.svg" />
+    <Content Include="Images\fm.svg" />
+    <Content Include="Images\fo.svg" />
+    <Content Include="Images\fr.svg" />
+    <Content Include="Images\ga.svg" />
+    <Content Include="Images\gb-eng.svg" />
+    <Content Include="Images\gb-nir.svg" />
+    <Content Include="Images\gb-sct.svg" />
+    <Content Include="Images\gb-wls.svg" />
+    <Content Include="Images\gb.svg" />
+    <Content Include="Images\gd.svg" />
+    <Content Include="Images\ge.svg" />
+    <Content Include="Images\gf.svg" />
+    <Content Include="Images\gg.svg" />
+    <Content Include="Images\gh.svg" />
+    <Content Include="Images\gi.svg" />
+    <Content Include="Images\gl.svg" />
+    <Content Include="Images\gm.svg" />
+    <Content Include="Images\gn.svg" />
+    <Content Include="Images\gp.svg" />
+    <Content Include="Images\gq.svg" />
+    <Content Include="Images\gr.svg" />
+    <Content Include="Images\gs.svg" />
+    <Content Include="Images\gt.svg" />
+    <Content Include="Images\gu.svg" />
+    <Content Include="Images\gw.svg" />
+    <Content Include="Images\gy.svg" />
+    <Content Include="Images\hk.svg" />
+    <Content Include="Images\hm.svg" />
+    <Content Include="Images\hn.svg" />
+    <Content Include="Images\hr.svg" />
+    <Content Include="Images\ht.svg" />
+    <Content Include="Images\hu.svg" />
+    <Content Include="Images\id.svg" />
+    <Content Include="Images\ie.svg" />
+    <Content Include="Images\il.svg" />
+    <Content Include="Images\im.svg" />
+    <Content Include="Images\in.svg" />
+    <Content Include="Images\io.svg" />
+    <Content Include="Images\iq.svg" />
+    <Content Include="Images\ir.svg" />
+    <Content Include="Images\is.svg" />
+    <Content Include="Images\it.svg" />
+    <Content Include="Images\je.svg" />
+    <Content Include="Images\jm.svg" />
+    <Content Include="Images\jo.svg" />
+    <Content Include="Images\jp.svg" />
+    <Content Include="Images\ke.svg" />
+    <Content Include="Images\kg.svg" />
+    <Content Include="Images\kh.svg" />
+    <Content Include="Images\ki.svg" />
+    <Content Include="Images\km.svg" />
+    <Content Include="Images\kn.svg" />
+    <Content Include="Images\kp.svg" />
+    <Content Include="Images\kr.svg" />
+    <Content Include="Images\kw.svg" />
+    <Content Include="Images\ky.svg" />
+    <Content Include="Images\kz.svg" />
+    <Content Include="Images\la.svg" />
+    <Content Include="Images\lb.svg" />
+    <Content Include="Images\lc.svg" />
+    <Content Include="Images\li.svg" />
+    <Content Include="Images\lk.svg" />
+    <Content Include="Images\lr.svg" />
+    <Content Include="Images\ls.svg" />
+    <Content Include="Images\lt.svg" />
+    <Content Include="Images\lu.svg" />
+    <Content Include="Images\lv.svg" />
+    <Content Include="Images\ly.svg" />
+    <Content Include="Images\ma.svg" />
+    <Content Include="Images\mc.svg" />
+    <Content Include="Images\md.svg" />
+    <Content Include="Images\me.svg" />
+    <Content Include="Images\mf.svg" />
+    <Content Include="Images\mg.svg" />
+    <Content Include="Images\mh.svg" />
+    <Content Include="Images\mk.svg" />
+    <Content Include="Images\ml.svg" />
+    <Content Include="Images\mm.svg" />
+    <Content Include="Images\mn.svg" />
+    <Content Include="Images\mo.svg" />
+    <Content Include="Images\mp.svg" />
+    <Content Include="Images\mq.svg" />
+    <Content Include="Images\mr.svg" />
+    <Content Include="Images\ms.svg" />
+    <Content Include="Images\mt.svg" />
+    <Content Include="Images\mu.svg" />
+    <Content Include="Images\mv.svg" />
+    <Content Include="Images\mw.svg" />
+    <Content Include="Images\mx.svg" />
+    <Content Include="Images\my.svg" />
+    <Content Include="Images\mz.svg" />
+    <Content Include="Images\na.svg" />
+    <Content Include="Images\nc.svg" />
+    <Content Include="Images\ne.svg" />
+    <Content Include="Images\nf.svg" />
+    <Content Include="Images\ng.svg" />
+    <Content Include="Images\ni.svg" />
+    <Content Include="Images\nl.svg" />
+    <Content Include="Images\no.svg" />
+    <Content Include="Images\np.svg" />
+    <Content Include="Images\nr.svg" />
+    <Content Include="Images\nu.svg" />
+    <Content Include="Images\nz.svg" />
+    <Content Include="Images\om.svg" />
+    <Content Include="Images\pa.svg" />
+    <Content Include="Images\pe.svg" />
+    <Content Include="Images\pf.svg" />
+    <Content Include="Images\pg.svg" />
+    <Content Include="Images\ph.svg" />
+    <Content Include="Images\pk.svg" />
+    <Content Include="Images\pl.svg" />
+    <Content Include="Images\pm.svg" />
+    <Content Include="Images\pn.svg" />
+    <Content Include="Images\pr.svg" />
+    <Content Include="Images\ps.svg" />
+    <Content Include="Images\pt.svg" />
+    <Content Include="Images\pw.svg" />
+    <Content Include="Images\py.svg" />
+    <Content Include="Images\qa.svg" />
+    <Content Include="Images\re.svg" />
+    <Content Include="Images\ro.svg" />
+    <Content Include="Images\rs.svg" />
+    <Content Include="Images\ru.svg" />
+    <Content Include="Images\rw.svg" />
+    <Content Include="Images\sa.svg" />
+    <Content Include="Images\sb.svg" />
+    <Content Include="Images\sc.svg" />
+    <Content Include="Images\sd.svg" />
+    <Content Include="Images\se.svg" />
+    <Content Include="Images\sg.svg" />
+    <Content Include="Images\sh.svg" />
+    <Content Include="Images\si.svg" />
+    <Content Include="Images\sj.svg" />
+    <Content Include="Images\sk.svg" />
+    <Content Include="Images\sl.svg" />
+    <Content Include="Images\sm.svg" />
+    <Content Include="Images\sn.svg" />
+    <Content Include="Images\so.svg" />
+    <Content Include="Images\sr.svg" />
+    <Content Include="Images\ss.svg" />
+    <Content Include="Images\st.svg" />
+    <Content Include="Images\sv.svg" />
+    <Content Include="Images\sx.svg" />
+    <Content Include="Images\sy.svg" />
+    <Content Include="Images\sz.svg" />
+    <Content Include="Images\tc.svg" />
+    <Content Include="Images\td.svg" />
+    <Content Include="Images\tf.svg" />
+    <Content Include="Images\tg.svg" />
+    <Content Include="Images\th.svg" />
+    <Content Include="Images\tj.svg" />
+    <Content Include="Images\tk.svg" />
+    <Content Include="Images\tl.svg" />
+    <Content Include="Images\tm.svg" />
+    <Content Include="Images\tn.svg" />
+    <Content Include="Images\to.svg" />
+    <Content Include="Images\tr.svg" />
+    <Content Include="Images\tt.svg" />
+    <Content Include="Images\tv.svg" />
+    <Content Include="Images\tw.svg" />
+    <Content Include="Images\tz.svg" />
+    <Content Include="Images\ua.svg" />
+    <Content Include="Images\ug.svg" />
+    <Content Include="Images\um.svg" />
+    <Content Include="Images\un.svg" />
+    <Content Include="Images\us.svg" />
+    <Content Include="Images\uy.svg" />
+    <Content Include="Images\uz.svg" />
+    <Content Include="Images\va.svg" />
+    <Content Include="Images\vc.svg" />
+    <Content Include="Images\ve.svg" />
+    <Content Include="Images\vg.svg" />
+    <Content Include="Images\vi.svg" />
+    <Content Include="Images\vn.svg" />
+    <Content Include="Images\vu.svg" />
+    <Content Include="Images\wf.svg" />
+    <Content Include="Images\ws.svg" />
+    <Content Include="Images\ye.svg" />
+    <Content Include="Images\yt.svg" />
+    <Content Include="Images\za.svg" />
+    <Content Include="Images\zm.svg" />
+    <Content Include="Images\zw.svg" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\InfoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\Country.cs" />
+    <Compile Include="Models\Data\CountryData.cs" />
+    <Compile Include="Models\Data\CountryVote.cs" />
+    <Compile Include="Models\Data\IndexInfo.cs" />
+    <Compile Include="Models\IndexContacts.cs" />
+    <Compile Include="Models\Request\CountryVoteRequest.cs" />
+    <Compile Include="Models\Response\CountryDetails.cs" />
+    <Compile Include="Models\Response\CountryInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Configuration.cs" />
+    <Compile Include="Services\CountryService.cs" />
+    <Compile Include="Services\HappyDbContext.cs" />
+    <Compile Include="Utils\ISO3166.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\happynation - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\happynation - Web Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50150</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50150/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
